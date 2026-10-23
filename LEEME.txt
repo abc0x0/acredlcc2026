@@ -1,0 +1,44 @@
+PROGRAMA DE ACREDITACIÓN LCC 2026
+
+CONTENIDO
+Panel principal: agenda completa del 25 al 29 de octubre de 2026, con 37 actividades, coordinación y comisión de evaluadores.
+Seis paneles de asistentes: autoridades, estudiantes, profesores/personal docente, áreas de apoyo, egresados y empleadores; 87 registros con nombre.
+Las palabras de los grupos dentro de la agenda enlazan a sus listas. «Docentes» y «profesores» abren el mismo panel. Cada lista tiene un enlace de regreso a la agenda.
+Vista adaptable a celular, búsqueda por grupo y casillas de asistencia.
+
+CONSULTA LOCAL
+Extrae el ZIP completo en una misma carpeta y abre index.html en un navegador moderno. El contenido y los paneles funcionan localmente. Esta forma de abrirlo no activa la instalación PWA.
+
+INSTALACIÓN EN UN TELÉFONO
+1. Aloja el contenido completo de esta carpeta en un servicio web que entregue los archivos mediante HTTPS. Mantén los nombres y la carpeta icons. No se requiere un servidor de aplicación ni una base de datos. Puede publicarse en la raíz del sitio o en una subcarpeta.
+2. Abre esa dirección HTTPS en el navegador del teléfono. Espera el mensaje «Lista para usarse sin conexión» dentro de «Instalar en el celular».
+3. Android / Chrome: toca «Instalar aplicación» cuando aparezca en la página, o usa el menú del navegador > Instalar aplicación / Agregar a pantalla principal. El texto exacto depende del navegador.
+4. iPhone / Safari: Compartir > Agregar a pantalla de inicio. Activa «Abrir como app web» si aparece y confirma.
+5. Abre LCC 2026 desde el icono del teléfono. Después de la preparación inicial, la agenda, el directorio y el PDF original pueden consultarse sin conexión. Los correos externos requieren las aplicaciones y conexiones correspondientes.
+
+IMPORTANTE
+Este paquete contiene una aplicación web progresiva (PWA), no un APK de Android ni un paquete de App Store. Abrir el ZIP o index.html directamente en el teléfono no equivale a instalar la PWA. Una dirección HTTP de otro equipo en la red local tampoco cumple el requisito HTTPS; localhost sirve únicamente para desarrollo en el mismo dispositivo.
+
+ASISTENCIA
+Las marcas se guardan en este navegador y dispositivo, no se comparten ni modifican el Excel. Cambiar la dirección, el navegador o borrar su almacenamiento puede hacer que las marcas no estén disponibles. La instalación en iPhone puede usar almacenamiento distinto al de Safari. Si el guardado no está disponible, la página muestra un aviso. Cada registro se conserva por pestaña aunque una persona figure en varios grupos.
+
+ARCHIVOS PARA LA PWA
+index.html: contenido completo de agenda y participantes.
+styles.css: presentación adaptable a celular.
+app.js: navegación por enlaces, búsqueda, asistencia e instalación.
+manifest.webmanifest: identidad, inicio, modo independiente e iconos.
+sw.js: preparación y consulta sin conexión.
+icons/: iconos PNG 192 y 512, icono maskable y apple-touch-icon.
+Agenda-de-trabajo.pdf: documento original para consulta.
+
+PUBLICACIÓN Y ACTUALIZACIONES
+Entrega el manifiesto con Content-Type application/manifest+json (o application/json) y sw.js como JavaScript. Los servidores estáticos habituales reconocen estas extensiones; revisa estos dos tipos al configurar el alojamiento. El service worker debe permanecer junto a index.html y se aplica a esta carpeta y sus subcarpetas.
+Al actualizar la aplicación, incrementa VERSION en sw.js y publica todos los archivos juntos. Vuelve a abrir la aplicación con conexión para descargar la nueva versión. Las marcas de asistencia usan almacenamiento local separado de la caché y se conservan si se mantiene la misma dirección.
+
+FUENTES
+Agenda-de-trabajo.pdf: horarios, actividades, responsables y evaluadores. Se conservan las actividades del 25 de octubre, aunque la portada define la visita del 26 al 29. Se aclara «profesores» junto a «docentes» para facilitar la navegación.
+Directorio de participantes 26-6-20-334.xlsx: datos de 87 registros en 6 pestañas. Se omiten filas sin nombre. Se conserva el contenido original; la columna de teléfonos de Egresados se identifica con el encabezado «Teléfono».
+
+Documentación de instalación:
+https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable
+https://support.apple.com/guide/iphone/open-as-web-app-iphea86e5236/ios
